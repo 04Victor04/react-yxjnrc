@@ -1,11 +1,13 @@
 import React from 'react';
+import {List} from './List';
+
 export function Etiqueta1(props) {
   return <div>
    {props.titulo} - {props.nombre}
     <ul>
-      <li>Elemento1</li>
-      <li>Elemento2</li>
-      <li>Elemento3</li>
+      <List texto="Elemento1"/>
+      <List texto="Elemento2"/>
+      <List texto="Elemento3"/>
     </ul>
   </div>;
 }

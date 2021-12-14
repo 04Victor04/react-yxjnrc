@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.css';
 import {Etiqueta1} from './components/Etiqueta1';
-import {List} from './components/List';
 
 
 export default function App() {
@@ -13,7 +12,7 @@ export default function App() {
       <Etiqueta1 titulo="Comp3" nombre=":(" icono=":("/>
       <Etiqueta1 titulo="Comp3" nombre="1"icono=":)"/>
       <h2>SegundoComponente</h2>
-      <List/>
+     
     </div>
   );
 }
