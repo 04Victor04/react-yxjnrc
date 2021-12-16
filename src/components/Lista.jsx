@@ -1,5 +1,5 @@
 import React from 'react';
-import ComponenteLista from './ComponenteLista';
+import ComponenteLista from './ComponenteListaClase';
 export function Lista(props) {
   const listaComponentes = [];
 
