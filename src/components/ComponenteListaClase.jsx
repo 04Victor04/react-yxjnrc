@@ -5,7 +5,7 @@ import './componente-lista.css';
 class ComponenteListaClase extends React.Component {
   constructor(props) {
     super(props);
-    this.state= {
+    this.state = {
       done: props.done
     };
     this.prioridad = props.prioridad;
@@ -21,16 +21,15 @@ class ComponenteListaClase extends React.Component {
     }
   }
 
-  setTaskStatus() {
+  changeStatus() {
     this.setState({done: !this.state.done});
-    
   }
 
   render() {
     this.setElementClass();
     return (
       <li className={this.claseLista}>
-        <input type="checkbox" defaultChecked={this.state.done} onChange={this.setTaskStatus.bind(this)}/>
+        <input type="checkbox" defaultChecked={this.state.done} onChange={this.changeStatus.bind(this)} />
         {this.texto}
       </li>
     );
@@ -39,6 +38,7 @@ class ComponenteListaClase extends React.Component {
 export default ComponenteListaClase;
 ComponenteListaClase.defaultProps = {
   prioridad: 'baja',
+  done: false
 };
 
 export default ComponenteListaClase;
