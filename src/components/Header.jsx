@@ -13,6 +13,7 @@ class Header extends React.Component {
     return (
       <nav>
         <h1>Mi aplicación</h1>
+       
         {/*
         <ul>{this.createMenuLinks()}</ul>
         <ul>
@@ -54,6 +55,7 @@ class Header extends React.Component {
     }
     return listComponents;
   }
+  
 }
 
 export default Header;
