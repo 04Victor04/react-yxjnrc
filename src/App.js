@@ -11,9 +11,9 @@ function createRoutes(){
   const listaRutas =[];
   for (let i = 0; i < MenuItems.length; i++) {
     listaRutas.push(
-      <li>
+      
         <Route path={MenuItems[i].path} exact component={MenuItems[i].component}></Route>
-      </li>
+      
     );
   }
   return listaRutas;
@@ -24,6 +24,11 @@ export function App() {
       
       <Header />
       {createRoutes()}
+      {MenuItems.map(function createRoutes(){
+
+
+      }
+      )}
      {/*
       <Route path="/" exact component={Home} />
       <Route path="/listas" component={PaginaListas} />
