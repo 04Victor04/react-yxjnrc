@@ -23,10 +23,10 @@ export function App() {
     <Router>
       
       <Header />
-      {createRoutes()}
-      {MenuItems.map(function createRoutes(){
-
-
+      {/*{createRoutes()}*/}
+      {MenuItems.map(function (item){
+return (<Route path={item.path} exact component={item.component}></Route>);
+    
       }
       )}
      {/*
