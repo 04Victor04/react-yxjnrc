@@ -3,28 +3,27 @@ import { Card, Container, Table, Row, Col } from 'react-bootstrap';
 import { TitulosTablaPlayeras, DatosTablaPlayeras } from '../data/DatosPlayeras';
 class Playeras extends React.Component {
   constructor(props) {
-    super(props);
+    super(props); this.state = {
+      imagen: '',
+      playerp: '',
+      marcap: '',
+      modelop: '',
+      colorp: '',
+    };
+  }
+
+  eventoclick(item) {
+    this.setState({
+      imagen: item.imagen,
+      playerap: item.playera,
+      marcap: item.marca,
+      modelop: item.modelo,
+      colorp: item.color,
+    });
   }
   
   render() {
-    const a = () => {
-      var e = 2;
-        alert(<Col lg={4} md={6}>
-              <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={DatosTablaPlayeras[e].imagen} />
-                <Card.Body>
-                  <Card.Title>
-                    {DatosTablaPlayeras[e].marca} {DatosTablaPlayeras[e].modelo}
-                  </Card.Title>
-                  <Card.Text>
-                    Playera: {DatosTablaPlayeras[e].playera}
-                    <p />
-                    {DatosTablaPlayeras[e].descripción}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>);
-    }
+    
     return (
       <div className="main-site">
         <h1>Playeras</h1>
@@ -43,7 +42,7 @@ class Playeras extends React.Component {
                 <tbody>
                   {DatosTablaPlayeras.map((item) => {
                     return (
-                      <tr onClick={a}>
+                      <tr onClick={() => this.eventoclick(item)}>
                         <td>{item.playera}</td>
                         <td>{item.marca}</td>
                         <td>{item.modelo}</td>
@@ -53,6 +52,22 @@ class Playeras extends React.Component {
                   })}
                 </tbody>
               </Table>
+            </Col><Col lg={2} md={6}>
+              <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={this.state.imagen} />
+                <Card.Body>
+                  <Card.Title>
+                    {this.state.playerap}
+                    <p />
+                    {this.state.marcap}
+                  </Card.Title>
+                  <Card.Text>
+                    {this.state.modelop}
+                    <p />
+                    {this.state.colorp}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
             </Col>
           </Row>
         </Container>
